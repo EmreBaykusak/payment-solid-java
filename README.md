@@ -1,33 +1,36 @@
-### Project README
+# Ödeme Yöntemi Entegrasyonu (SOLID Prensipleri ile)
 
-This project is a simple Java implementation demonstrating the **Strategy Design Pattern** for various payment methods.
+Bu proje, bir ödeme ekranı uygulamasında yeni bir ödeme yönteminin (PayPal) SOLID prensiplerine uygun olarak nasıl entegre edileceğini göstermektedir.
 
-### Overview
+## Tasarım Kararları ve Yaklaşım
 
-The system allows processing payments through different channels (Google Pay, Apple Pay, and Credit Card) using a unified interface. This design promotes flexibility and decoupled code, making it easy to add new payment methods without modifying existing logic.
+Projeyi geliştirirken aşağıdaki tasarım kararları alınmıştır:
 
-### How to Run
+### Strateji Tasarım Deseni (Strategy Design Pattern)
+Ödeme yöntemleri, `IPayment` arayüzünü (interface) uygulayan farklı sınıflar olarak tanımlanmıştır. Bu sayede uygulama, çalışma anında (runtime) hangi ödeme yönteminin kullanılacağını esnek bir şekilde belirleyebilir.
 
-1.  Ensure you have a Java Development Kit (JDK) installed (version 21 or higher recommended for `void main()` support).
-2.  Compile the source files:
+
+## Nasıl Çalıştırılır?
+
+1.  Java JDK (versiyon 21 veya üstü önerilir) yüklü olduğundan emin olun.
+2.  Dosyaları derleyin:
     ```bash
     javac src/*.java
     ```
-3.  Run the application:
+3.  Uygulamayı çalıştırın:
     ```bash
     java src/Main.java
     ```
 
-### Example Usage
-
-The application is interactive. Upon running, you will be prompted to select a payment method and enter an amount:
+## Örnek Kullanım
 
 ```text
 Select Payment Method:
 1: Google Pay
 2: Apple Pay
 3: Credit Card
-Enter choice (1-3): 1
-Enter amount: 200
-Paying 200 with Google Pay 
+4: PayPal
+Enter choice (1-4): 4
+Enter amount: 150
+Paying 150 with PayPal.
 ```

@@ -7,7 +7,8 @@ void main() {
     System.out.println("1: Google Pay");
     System.out.println("2: Apple Pay");
     System.out.println("3: Credit Card");
-    System.out.print("Enter choice (1-3): ");
+    System.out.println("4: PayPal");
+    System.out.print("Enter choice (1-4): ");
     int choice = scanner.nextInt();
 
     IPayment strategy;
@@ -20,6 +21,9 @@ void main() {
             break;
         case 3:
             strategy = new CreditCardPayment();
+            break;
+        case 4:
+            strategy = new PayPalPayment();
             break;
         default:
             System.out.println("Invalid choice.");
