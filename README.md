@@ -1,6 +1,6 @@
 # Ödeme Yöntemi Entegrasyonu (SOLID Prensipleri ile)
 
-Bu proje, bir ödeme ekranı uygulamasında yeni bir ödeme yönteminin (PayPal) SOLID prensiplerine uygun olarak nasıl entegre edileceğini göstermektedir.
+Bu proje, bir ödeme ekranı uygulamasında yeni bir ödeme yönteminin SOLID prensiplerine uygun olarak nasıl entegre edileceğini göstermektedir.
 
 ## Tasarım Kararları ve Yaklaşım
 
