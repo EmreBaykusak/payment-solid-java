@@ -3,7 +3,7 @@ public class Payment {
     public Payment(IPayment payment){
         this.payment = payment;
     }
-    public void pay(){
-        payment.pay();
+    public void pay(int amount){
+        payment.pay(amount);
     }
 }

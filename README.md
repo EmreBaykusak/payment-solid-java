@@ -20,7 +20,14 @@ The system allows processing payments through different channels (Google Pay, Ap
 
 ### Example Usage
 
-```java
-Payment payment = new Payment(new GooglePayPayment());
-payment.pay(); // Outputs: Paying with Google Pay
+The application is interactive. Upon running, you will be prompted to select a payment method and enter an amount:
+
+```text
+Select Payment Method:
+1: Google Pay
+2: Apple Pay
+3: Credit Card
+Enter choice (1-3): 1
+Enter amount: 200
+Paying 200 with Google Pay 
 ```

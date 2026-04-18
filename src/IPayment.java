@@ -1,3 +1,3 @@
 public interface IPayment {
-    void pay();
+    void pay(int amount);
 }
