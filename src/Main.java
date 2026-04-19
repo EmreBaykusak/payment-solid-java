@@ -3,39 +3,51 @@ import java.util.Scanner;
 void main() {
     Scanner scanner = new Scanner(System.in);
 
-    System.out.println("Select Payment Method:");
-    System.out.println("1: Google Pay");
-    System.out.println("2: Apple Pay");
-    System.out.println("3: Credit Card");
-    System.out.println("4: PayPal");
-    System.out.print("Enter choice (1-4): ");
-    int choice = scanner.nextInt();
+    while(true){
+        System.out.println("Select Payment Method:");
+        System.out.println("1: Google Pay");
+        System.out.println("2: Apple Pay");
+        System.out.println("3: Credit Card");
+        System.out.println("4: PayPal");
+        System.out.println("0: Exit");
+        System.out.print("Enter Payment Method: ");
 
-    IPayment strategy;
-    switch (choice) {
-        case 1:
-            strategy = new GooglePayPayment();
-            break;
-        case 2:
-            strategy = new ApplePayPayment();
-            break;
-        case 3:
-            strategy = new CreditCardPayment();
-            break;
-        case 4:
-            strategy = new PayPalPayment();
-            break;
-        default:
-            System.out.println("Invalid choice.");
-            return;
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid payment method. Please enter a number.");
+            scanner.next();
+            continue;
+        }
+
+        int choice = scanner.nextInt();
+        if (choice == 0) break;
+
+        String strategy = switch (choice) {
+            case 1 -> "GooglePay";
+            case 2 -> "ApplePay";
+            case 3 -> "CreditCard";
+            case 4 -> "PayPal";
+            default -> null;
+        };
+
+        System.out.print("Enter amount: ");
+        if (!scanner.hasNextInt()) {
+            System.out.println("Invalid amount. Please enter a number.");
+            scanner.next();
+            continue;
+        }
+        int amount = scanner.nextInt();
+
+        try {
+            PaymentFactory paymentFactory = new PaymentFactory();
+            IPayment paymentType = paymentFactory.createPayment(strategy);
+            Payment payment = new Payment(paymentType);
+            payment.pay(amount);
+        } catch (Exception _) {
+            System.err.println("Error processing payment: Payment method not found." );
+        }
     }
 
-    System.out.print("Enter amount: ");
-    int amount = scanner.nextInt();
-
-    Payment payment = new Payment(strategy);
-    payment.pay(amount);
-
     scanner.close();
+    System.out.println("Program exited.");
 }
 

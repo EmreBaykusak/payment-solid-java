@@ -9,6 +9,9 @@ Projeyi geliştirirken aşağıdaki tasarım kararları alınmıştır:
 ### Strateji Tasarım Deseni (Strategy Design Pattern)
 Ödeme yöntemleri, `IPayment` arayüzünü (interface) uygulayan farklı sınıflar olarak tanımlanmıştır. Bu sayede uygulama, çalışma anında (runtime) hangi ödeme yönteminin kullanılacağını esnek bir şekilde belirleyebilir.
 
+### Fabrika Tasarım Deseni (Factory Design Pattern)
+`PaymentFactory` sınıfı, belirtilen strateji ismine göre uygun `IPayment` nesnesini oluşturmakla sorumludur. Bu sayede nesne oluşturma mantığı `Main` sınıfından ayrıştırılmış olur.
+
 
 ## Nasıl Çalıştırılır?
 
