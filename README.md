@@ -33,7 +33,17 @@ Select Payment Method:
 2: Apple Pay
 3: Credit Card
 4: PayPal
-Enter choice (1-4): 4
+0: Exit
+Enter choice: 4
 Enter amount: 150
 Paying 150 with PayPal.
+
+Select Payment Method:
+1: Google Pay
+2: Apple Pay
+3: Credit Card
+4: PayPal
+0: Exit
+Enter choice: 0
+Program exited.
 ```
